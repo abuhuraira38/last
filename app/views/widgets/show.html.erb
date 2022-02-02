@@ -1,0 +1,14 @@
+<h1>Widget Information</h1>
+<h2 data-testid="widget-name"><%= @widget.name %></h2>
+<%# START:edit:3 %>
+<h2>
+  ID #<%= styled_widget_id(@widget.user_facing_identifier) %>
+</h2>
+<%# END:edit:3 %>
+<% if flash[:notice].present? %>
+  <aside>
+    <%= flash[:notice] %>
+  </aside>
+<% end %>
+
+<%= widget_rating_component(@widget) %>
