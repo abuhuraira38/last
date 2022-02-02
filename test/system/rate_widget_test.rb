@@ -1,0 +1,15 @@
+require "application_system_test_case"
+
+class RateWidgetsTest < BrowserSystemTestCase
+  test "rating a widget shows our rating inline" do
+# START:edit:3
+    widget = FactoryBot.create(:widget)
+    visit widget_path(widget)
+# END:edit:3
+
+    click_on "2"
+
+    assert_selector "[data-rating-present]",
+                    text: /thanks for rating.*2/i
+  end
+end

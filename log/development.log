@@ -1,0 +1,637 @@
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (74.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "widgets_development"[0m
+  [1m[35m (169.4ms)[0m  [1m[35mCREATE DATABASE "widgets_development" ENCODING = 'utf8'[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2880957698232373935)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-13 17:05:16.775877"], ["updated_at", "2020-12-13 17:05:16.775877"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2880957698232373935)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 172.20.0.4 at 2020-12-13 17:05:31 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.4ms | Allocations: 439)
+Completed 200 OK in 37ms (Views: 14.2ms | ActiveRecord: 0.0ms | Allocations: 3576)
+
+
+Started GET "/widgets/1234" for 172.20.0.4 at 2020-12-13 17:06:22 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1234"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 237)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /root/widgets/public/packs
+[Webpacker] Hash: 415a948d492e21802f43
+Version: webpack 4.44.2
+Time: 2452ms
+Built at: 12/13/2020 5:06:27 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-d5a3c3b4dce84b5eb605.js    125 KiB  application  [emitted] [immutable]  application
+js/application-d5a3c3b4dce84b5eb605.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-d5a3c3b4dce84b5eb605.js js/application-d5a3c3b4dce84b5eb605.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 4204.6ms | Allocations: 12919)
+Completed 200 OK in 4217ms (Views: 4207.7ms | ActiveRecord: 0.0ms | Allocations: 15446)
+
+
+Started GET "/widgets" for 172.20.0.4 at 2020-12-13 17:06:49 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/index.html.erb within layouts/application
+  Rendered widgets/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 368)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 5654)
+Completed 200 OK in 26ms (Views: 17.2ms | ActiveRecord: 0.0ms | Allocations: 8177)
+
+
+Started GET "/amazing" for 172.20.0.4 at 2020-12-13 17:06:55 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/widgets" for 172.20.0.4 at 2020-12-13 17:06:55 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by WidgetsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/index.html.erb within layouts/application
+  Rendered widgets/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 359)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 5405)
+Completed 200 OK in 21ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 7927)
+
+
+Started GET "/widgets/1234" for 172.20.0.4 at 2020-12-13 17:07:26 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1234"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1147)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | Allocations: 6539)
+Completed 200 OK in 33ms (Views: 22.7ms | ActiveRecord: 0.0ms | Allocations: 9068)
+
+
+Started GET "/widgets/1234" for 172.20.0.4 at 2020-12-13 17:07:34 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1234"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/show.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1156)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 23.8ms | Allocations: 11195)
+Completed 200 OK in 34ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 13722)
+
+
+Started GET "/widgets/12345" for 172.20.0.4 at 2020-12-13 17:08:06 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"12345"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/_rating.html.erb (Duration: 2.3ms | Allocations: 1004)
+  Rendered widgets/show.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 16.8ms | Allocations: 6966)
+Completed 200 OK in 28ms (Views: 19.5ms | ActiveRecord: 0.0ms | Allocations: 9517)
+
+
+Started GET "/widgets/12345" for 172.20.0.4 at 2020-12-13 17:08:20 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"12345"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/_rating.html.erb (Duration: 3.0ms | Allocations: 1001)
+  Rendered widgets/show.html.erb within layouts/application (Duration: 6.0ms | Allocations: 1593)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 7002)
+Completed 200 OK in 36ms (Views: 25.8ms | ActiveRecord: 0.0ms | Allocations: 9553)
+
+
+Started GET "/design_system_docs" for 172.20.0.4 at 2020-12-13 17:08:56 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DesignSystemDocsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering design_system_docs/index.html.erb within layouts/application
+  Rendered design_system_docs/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 890)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /root/widgets/public/packs
+[Webpacker] Hash: 415a948d492e21802f43
+Version: webpack 4.44.2
+Time: 1016ms
+Built at: 12/13/2020 5:08:59 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-d5a3c3b4dce84b5eb605.js    125 KiB  application  [emitted] [immutable]  application
+js/application-d5a3c3b4dce84b5eb605.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-d5a3c3b4dce84b5eb605.js js/application-d5a3c3b4dce84b5eb605.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 492 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2864.7ms | Allocations: 61532)
+Completed 200 OK in 2876ms (Views: 2867.9ms | ActiveRecord: 0.0ms | Allocations: 64059)
+
+
+Started GET "/design_system_docs" for 172.20.0.4 at 2020-12-13 17:09:05 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DesignSystemDocsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering design_system_docs/index.html.erb within layouts/application
+  Rendered design_system_docs/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 28.3ms | Allocations: 12388)
+Completed 200 OK in 39ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 14915)
+
+
+Started GET "/design_system_docs" for 172.20.0.4 at 2020-12-13 17:09:11 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DesignSystemDocsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering design_system_docs/index.html.erb within layouts/application
+  Rendered design_system_docs/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 890)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 31.0ms | Allocations: 12388)
+Completed 200 OK in 42ms (Views: 34.5ms | ActiveRecord: 0.0ms | Allocations: 14915)
+
+
+Started GET "/widgets/1234" for 172.20.0.4 at 2020-12-13 17:09:52 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#show as HTML
+  Parameters: {"id"=>"1234"}
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/show.html.erb within layouts/application
+  Rendered widgets/_rating.html.erb (Duration: 2.8ms | Allocations: 1113)
+  Rendered widgets/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1705)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /root/widgets/public/packs
+[Webpacker] Hash: 45558e70d97c186d1401
+Version: webpack 4.44.2
+Time: 1041ms
+Built at: 12/13/2020 5:09:55 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-c245c790e2659c3ad2c9.js    127 KiB  application  [emitted] [immutable]  application
+js/application-c245c790e2659c3ad2c9.js.map    140 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-c245c790e2659c3ad2c9.js js/application-c245c790e2659c3ad2c9.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/widget_ratings/index.js] 971 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2582.7ms | Allocations: 15100)
+Completed 200 OK in 2594ms (Views: 2585.7ms | ActiveRecord: 0.0ms | Allocations: 17651)
+
+
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (33.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "widgets_development"[0m
+  [1m[35m (164.6ms)[0m  [1m[35mCREATE DATABASE "widgets_development" ENCODING = 'utf8'[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-13 17:12:17.391197"], ["updated_at", "2020-12-13 17:12:17.391197"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "c9ad1dbaa05acea2eb44861d1fdc691e622f5dd5"], ["created_at", "2020-12-13 17:12:17.405715"], ["updated_at", "2020-12-13 17:12:17.405715"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2880957698232373935)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateManufacturers (20201213171220)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.6ms)[0m  [1m[35mCREATE TABLE "manufacturers" ("id" bigserial primary key, "name" text, "address" text, "city" text, "post_code" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201213171220"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateWidgets (20201213171222)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "widgets" ("id" bigserial primary key, "name" text, "status" text, "manufacturer_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_c844384a2b"
+FOREIGN KEY ("manufacturer_id")
+  REFERENCES "manufacturers" ("id")
+)[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE INDEX "index_widgets_on_manufacturer_id" ON "widgets" ("manufacturer_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20201213171222"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2880957698232373935)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (46.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "widgets_development"[0m
+  [1m[35m (155.2ms)[0m  [1m[35mCREATE DATABASE "widgets_development" ENCODING = 'utf8'[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamptz(6) NOT NULL, "updated_at" timestamptz(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2880957698232373935)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-12-13 17:13:07.986791"], ["updated_at", "2020-12-13 17:13:07.986791"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(2880957698232373935)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2880957698232373935)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to MakeWidgetAndManufacturers (20210101000000)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "widget_statuses" ("id" bigserial primary key, "name" text NOT NULL, "created_at" timestamptz(6) NOT NULL, "updated_at" timestamptz(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMENT ON TABLE "widget_statuses" IS 'List of definitive widget statuses'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMENT ON COLUMN "widget_statuses"."name" IS 'The name of the status'[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_widget_statuses_on_name" ON "widget_statuses" ("name")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMENT ON INDEX "index_widget_statuses_on_name" IS 'No two widget statuses should have the same name'[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" bigserial primary key, "street" text NOT NULL, "zip" text NOT NULL, "created_at" timestamptz(6) NOT NULL, "updated_at" timestamptz(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMENT ON TABLE "addresses" IS 'Addresses for manufacturers'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMENT ON COLUMN "addresses"."street" IS 'Street part of the address'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMENT ON COLUMN "addresses"."zip" IS 'Postal or zip code of this address'[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210101000000"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2880957698232373935)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2880957698232373935)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to MakeWidgetAndManufacturers (20210101000000)
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "addresses"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP INDEX  "index_widget_statuses_on_name"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "widget_statuses"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.9ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20210101000000"]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2880957698232373935)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2880957698232373935)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to MakeWidgetAndManufacturers (20210101000000)
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "widget_statuses" ("id" bigserial primary key, "name" text NOT NULL, "created_at" timestamptz(6) NOT NULL, "updated_at" timestamptz(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMENT ON TABLE "widget_statuses" IS 'List of definitive widget statuses'[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMENT ON COLUMN "widget_statuses"."name" IS 'The name of the status'[0m
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_widget_statuses_on_name" ON "widget_statuses" ("name")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMENT ON INDEX "index_widget_statuses_on_name" IS 'No two widget statuses should have the same name'[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" bigserial primary key, "street" text NOT NULL, "zip" text NOT NULL, "created_at" timestamptz(6) NOT NULL, "updated_at" timestamptz(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMENT ON TABLE "addresses" IS 'Addresses for manufacturers'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMENT ON COLUMN "addresses"."street" IS 'Street part of the address'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMENT ON COLUMN "addresses"."zip" IS 'Postal or zip code of this address'[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE "manufacturers" ("id" bigserial primary key, "name" text NOT NULL, "address_id" bigint NOT NULL, "created_at" timestamptz(6) NOT NULL, "updated_at" timestamptz(6) NOT NULL, CONSTRAINT "fk_rails_413f677ef3"
+FOREIGN KEY ("address_id")
+  REFERENCES "addresses" ("id")
+)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE INDEX "index_manufacturers_on_address_id" ON "manufacturers" ("address_id")[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMENT ON TABLE "manufacturers" IS 'Makers of the widgets we sell'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMENT ON COLUMN "manufacturers"."name" IS 'Name of this manufacturer'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMENT ON COLUMN "manufacturers"."address_id" IS 'The address of this manufacturer'[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_manufacturers_on_name" ON "manufacturers" ("name")[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCREATE TABLE "widgets" ("id" bigserial primary key, "name" text NOT NULL, "price_cents" integer NOT NULL, "widget_status_id" bigint NOT NULL, "manufacturer_id" bigint NOT NULL, "created_at" timestamptz(6) NOT NULL, "updated_at" timestamptz(6) NOT NULL, CONSTRAINT "fk_rails_eb3d987080"
+FOREIGN KEY ("widget_status_id")
+  REFERENCES "widget_statuses" ("id")
+, CONSTRAINT "fk_rails_c844384a2b"
+FOREIGN KEY ("manufacturer_id")
+  REFERENCES "manufacturers" ("id")
+)[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE INDEX "index_widgets_on_widget_status_id" ON "widgets" ("widget_status_id")[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE INDEX "index_widgets_on_manufacturer_id" ON "widgets" ("manufacturer_id")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMENT ON TABLE "widgets" IS 'The stuff we sell'[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMENT ON COLUMN "widgets"."name" IS 'Name of this widget'[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMENT ON COLUMN "widgets"."price_cents" IS 'Price of this widget in cents'[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMENT ON COLUMN "widgets"."widget_status_id" IS 'The current status of this widget'[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMENT ON COLUMN "widgets"."manufacturer_id" IS 'The maker of this widget'[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_widgets_on_name_and_manufacturer_id" ON "widgets" ("name", "manufacturer_id")[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMENT ON INDEX "index_widgets_on_name_and_manufacturer_id" IS 'No manufacturer can have two widgets with the same name'[0m
+  [1m[35m (1.3ms)[0m  [1m[35m
+          ALTER TABLE
+            widgets
+          ADD CONSTRAINT
+            price_must_be_positive
+          CHECK (
+            price_cents > 0
+          )
+        [0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210101000000"]]
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2880957698232373935)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mWidget Load (1.0ms)[0m  [1m[34mSELECT "widgets".* FROM "widgets"[0m
+  [1m[36mManufacturer Load (1.4ms)[0m  [1m[34mSELECT "manufacturers".* FROM "manufacturers"[0m
+  [1m[36mAddress Load (1.2ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses"[0m
+  [1m[36mWidgetStatus Load (1.0ms)[0m  [1m[34mSELECT "widget_statuses".* FROM "widget_statuses"[0m
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWidgetStatus Create (1.3ms)[0m  [1m[32mINSERT INTO "widget_statuses" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fresh"], ["created_at", "2020-12-13 17:14:30.730878"], ["updated_at", "2020-12-13 17:14:30.730878"]]
+  [1m[36mTRANSACTION (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.9ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "19048 Patricia Row"], ["zip", "02431"], ["created_at", "2020-12-13 17:14:30.848159"], ["updated_at", "2020-12-13 17:14:30.848159"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (1.8ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lakin, Leuschke and Kuphal"], ["address_id", 1], ["created_at", "2020-12-13 17:14:30.855785"], ["updated_at", "2020-12-13 17:14:30.855785"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.7ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "9337 Senger Turnpike"], ["zip", "00729-6588"], ["created_at", "2020-12-13 17:14:30.862919"], ["updated_at", "2020-12-13 17:14:30.862919"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (0.8ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dach LLC"], ["address_id", 2], ["created_at", "2020-12-13 17:14:30.868196"], ["updated_at", "2020-12-13 17:14:30.868196"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.6ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "760 Sanford Walk"], ["zip", "56559-1821"], ["created_at", "2020-12-13 17:14:30.874122"], ["updated_at", "2020-12-13 17:14:30.874122"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (1.4ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Gorczany-Wehner"], ["address_id", 3], ["created_at", "2020-12-13 17:14:30.879741"], ["updated_at", "2020-12-13 17:14:30.879741"]]
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.4ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "769 Feeney Terrace"], ["zip", "49122"], ["created_at", "2020-12-13 17:14:30.888021"], ["updated_at", "2020-12-13 17:14:30.888021"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (0.7ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cremin LLC"], ["address_id", 4], ["created_at", "2020-12-13 17:14:30.892670"], ["updated_at", "2020-12-13 17:14:30.892670"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.6ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "63706 Dwayne Burgs"], ["zip", "19537-6910"], ["created_at", "2020-12-13 17:14:30.898993"], ["updated_at", "2020-12-13 17:14:30.898993"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (0.6ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Medhurst-Hansen"], ["address_id", 5], ["created_at", "2020-12-13 17:14:30.904255"], ["updated_at", "2020-12-13 17:14:30.904255"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.6ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "688 Zachary Mission"], ["zip", "64462"], ["created_at", "2020-12-13 17:14:30.910444"], ["updated_at", "2020-12-13 17:14:30.910444"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (0.6ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Abshire LLC"], ["address_id", 6], ["created_at", "2020-12-13 17:14:30.916291"], ["updated_at", "2020-12-13 17:14:30.916291"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.6ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "9809 Lyle Camp"], ["zip", "11744"], ["created_at", "2020-12-13 17:14:30.922552"], ["updated_at", "2020-12-13 17:14:30.922552"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (0.5ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Turcotte Group"], ["address_id", 7], ["created_at", "2020-12-13 17:14:30.928098"], ["updated_at", "2020-12-13 17:14:30.928098"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.6ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "3561 Larkin Center"], ["zip", "76611"], ["created_at", "2020-12-13 17:14:30.934548"], ["updated_at", "2020-12-13 17:14:30.934548"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (0.7ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Rutherford-Kessler"], ["address_id", 8], ["created_at", "2020-12-13 17:14:30.940533"], ["updated_at", "2020-12-13 17:14:30.940533"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.6ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "75064 Fadel Isle"], ["zip", "75623"], ["created_at", "2020-12-13 17:14:30.947358"], ["updated_at", "2020-12-13 17:14:30.947358"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (0.6ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Robel, Reinger and Runolfsson"], ["address_id", 9], ["created_at", "2020-12-13 17:14:30.953484"], ["updated_at", "2020-12-13 17:14:30.953484"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.6ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "3773 Angel Key"], ["zip", "70176"], ["created_at", "2020-12-13 17:14:30.959952"], ["updated_at", "2020-12-13 17:14:30.959952"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (0.7ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hammes, Predovic and Koss"], ["address_id", 10], ["created_at", "2020-12-13 17:14:30.965891"], ["updated_at", "2020-12-13 17:14:30.965891"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAddress Create (0.4ms)[0m  [1m[32mINSERT INTO "addresses" ("street", "zip", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["street", "4672 Beatty Ramp"], ["zip", "40159-2276"], ["created_at", "2020-12-13 17:14:30.972122"], ["updated_at", "2020-12-13 17:14:30.972122"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mManufacturer Create (0.6ms)[0m  [1m[32mINSERT INTO "manufacturers" ("name", "address_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cyberdyne Systems"], ["address_id", 11], ["created_at", "2020-12-13 17:14:30.990140"], ["updated_at", "2020-12-13 17:14:30.990140"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWidgetStatus Create (1.0ms)[0m  [1m[32mINSERT INTO "widget_statuses" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "adipisci"], ["created_at", "2020-12-13 17:14:31.006899"], ["updated_at", "2020-12-13 17:14:31.006899"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mWidget Create (1.5ms)[0m  [1m[32mINSERT INTO "widgets" ("name", "price_cents", "widget_status_id", "manufacturer_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Stembolt"], ["price_cents", 405550], ["widget_status_id", 2], ["manufacturer_id", 11], ["created_at", "2020-12-13 17:14:31.014687"], ["updated_at", "2020-12-13 17:14:31.014687"]]
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/widgets/new" for 172.20.0.4 at 2020-12-13 17:14:36 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/new.html.erb within layouts/application
+  [1m[36mManufacturer Load (2.1ms)[0m  [1m[34mSELECT "manufacturers".* FROM "manufacturers"[0m
+  ↳ app/views/widgets/new.html.erb:13
+  Rendered widgets/new.html.erb within layouts/application (Duration: 130.3ms | Allocations: 210464)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /root/widgets/public/packs
+[Webpacker] Hash: 45558e70d97c186d1401
+Version: webpack 4.44.2
+Time: 1070ms
+Built at: 12/13/2020 5:14:39 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-c245c790e2659c3ad2c9.js    127 KiB  application  [emitted] [immutable]  application
+js/application-c245c790e2659c3ad2c9.js.map    140 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-c245c790e2659c3ad2c9.js js/application-c245c790e2659c3ad2c9.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 845 bytes {application} [built]
+[./app/javascript/widget_ratings/index.js] 971 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+  Rendered layout layouts/application.html.erb (Duration: 2841.7ms | Allocations: 224119)
+Completed 200 OK in 2872ms (Views: 2837.1ms | ActiveRecord: 14.6ms | Allocations: 232866)
+
+
+Started GET "/widgets/new" for 172.20.0.4 at 2020-12-13 17:14:49 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/new.html.erb within layouts/application
+  [1m[36mManufacturer Load (1.7ms)[0m  [1m[34mSELECT "manufacturers".* FROM "manufacturers"[0m
+  ↳ app/views/widgets/new.html.erb:17
+  Rendered widgets/new.html.erb within layouts/application (Duration: 104.7ms | Allocations: 210201)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 123.4ms | Allocations: 221673)
+Completed 200 OK in 151ms (Views: 120.0ms | ActiveRecord: 12.8ms | Allocations: 230420)
+
+
+Started GET "/widgets/new" for 172.20.0.4 at 2020-12-13 17:15:00 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by WidgetsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering widgets/new.html.erb within layouts/application
+  Rendered widgets/_label_with_error.html.erb (Duration: 3.1ms | Allocations: 1389)
+  Rendered widgets/_label_with_error.html.erb (Duration: 1.5ms | Allocations: 990)
+  [1m[36mManufacturer Load (2.4ms)[0m  [1m[34mSELECT "manufacturers".* FROM "manufacturers"[0m
+  ↳ app/views/widgets/new.html.erb:32
+  Rendered widgets/_label_with_error.html.erb (Duration: 1.6ms | Allocations: 1012)
+  Rendered widgets/new.html.erb within layouts/application (Duration: 129.8ms | Allocations: 214267)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layout layouts/application.html.erb (Duration: 159.2ms | Allocations: 225731)
+Completed 200 OK in 193ms (Views: 153.4ms | ActiveRecord: 17.1ms | Allocations: 234508)
+
+
+Started GET "/rails/mailers/finance_mailer/high_priced_widget.html" for 172.20.0.4 at 2020-12-13 17:18:12 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (2.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"finance_mailer/high_priced_widget"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering finance_mailer/high_priced_widget.html.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.html.erb within layouts/mailer (Duration: 0.9ms | Allocations: 197)
+  Rendered layout layouts/mailer.html.erb (Duration: 2.3ms | Allocations: 408)
+  Rendering layout layouts/mailer.text.erb
+  Rendering finance_mailer/high_priced_widget.text.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.text.erb within layouts/mailer (Duration: 0.6ms | Allocations: 84)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.5ms | Allocations: 263)
+FinanceMailer#high_priced_widget: processed outbound mail in 17.1ms
+  Rendering /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/mailers/email.html.erb (Duration: 5.5ms | Allocations: 6460)
+Completed 200 OK in 221ms (Views: 8.1ms | ActiveRecord: 25.7ms | Allocations: 251567)
+
+
+Started GET "/rails/mailers/finance_mailer/high_priced_widget.html?part=text%2Fhtml" for 172.20.0.4 at 2020-12-13 17:18:13 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"finance_mailer/high_priced_widget"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering finance_mailer/high_priced_widget.html.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 84)
+  Rendered layout layouts/mailer.html.erb (Duration: 4.4ms | Allocations: 281)
+  Rendering layout layouts/mailer.text.erb
+  Rendering finance_mailer/high_priced_widget.text.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.text.erb within layouts/mailer (Duration: 4.8ms | Allocations: 82)
+  Rendered layout layouts/mailer.text.erb (Duration: 6.3ms | Allocations: 261)
+FinanceMailer#high_priced_widget: processed outbound mail in 25.5ms
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 1)
+Completed 200 OK in 41ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 14107)
+
+
+Started GET "/rails/mailers/finance_mailer/high_priced_widget.html" for 172.20.0.4 at 2020-12-13 17:18:21 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"finance_mailer/high_priced_widget"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering finance_mailer/high_priced_widget.html.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.html.erb within layouts/mailer (Duration: 13.9ms | Allocations: 1928)
+  Rendered layout layouts/mailer.html.erb (Duration: 15.1ms | Allocations: 2140)
+  Rendering layout layouts/mailer.text.erb
+  Rendering finance_mailer/high_priced_widget.text.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.text.erb within layouts/mailer (Duration: 0.5ms | Allocations: 84)
+  Rendered layout layouts/mailer.text.erb (Duration: 3.0ms | Allocations: 263)
+FinanceMailer#high_priced_widget: processed outbound mail in 30.9ms
+  Rendering /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/mailers/email.html.erb (Duration: 5.6ms | Allocations: 6460)
+Completed 200 OK in 220ms (Views: 7.8ms | ActiveRecord: 21.3ms | Allocations: 252773)
+
+
+Started GET "/rails/mailers/finance_mailer/high_priced_widget.html?part=text%2Fhtml" for 172.20.0.4 at 2020-12-13 17:18:22 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"finance_mailer/high_priced_widget"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering finance_mailer/high_priced_widget.html.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.html.erb within layouts/mailer (Duration: 1.8ms | Allocations: 296)
+  Rendered layout layouts/mailer.html.erb (Duration: 3.0ms | Allocations: 494)
+  Rendering layout layouts/mailer.text.erb
+  Rendering finance_mailer/high_priced_widget.text.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.text.erb within layouts/mailer (Duration: 0.8ms | Allocations: 82)
+  Rendered layout layouts/mailer.text.erb (Duration: 1.9ms | Allocations: 261)
+FinanceMailer#high_priced_widget: processed outbound mail in 13.8ms
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 1)
+Completed 200 OK in 23ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 14026)
+
+
+Started GET "/rails/mailers/finance_mailer/high_priced_widget.txt" for 172.20.0.4 at 2020-12-13 17:18:28 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::MailersController#preview as TEXT
+  Parameters: {"path"=>"finance_mailer/high_priced_widget"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering finance_mailer/high_priced_widget.html.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.html.erb within layouts/mailer (Duration: 5.4ms | Allocations: 1244)
+  Rendered layout layouts/mailer.html.erb (Duration: 6.6ms | Allocations: 1456)
+  Rendering layout layouts/mailer.text.erb
+  Rendering finance_mailer/high_priced_widget.text.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.text.erb within layouts/mailer (Duration: 2.0ms | Allocations: 228)
+  Rendered layout layouts/mailer.text.erb (Duration: 3.5ms | Allocations: 408)
+FinanceMailer#high_priced_widget: processed outbound mail in 24.1ms
+  Rendering /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /usr/dependencies-cache/bundler/ruby/2.7.0/gems/railties-6.1.0/lib/rails/templates/rails/mailers/email.html.erb (Duration: 6.0ms | Allocations: 6460)
+Completed 200 OK in 193ms (Views: 8.3ms | ActiveRecord: 23.2ms | Allocations: 252448)
+
+
+Started GET "/rails/mailers/finance_mailer/high_priced_widget.txt?part=text%2Fplain" for 172.20.0.4 at 2020-12-13 17:18:29 +0000
+Cannot render console from 172.20.0.4! Allowed networks: 172.18.0.0/172.18.255.255, 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::MailersController#preview as TEXT
+  Parameters: {"part"=>"text/plain", "path"=>"finance_mailer/high_priced_widget"}
+  Rendering layout layouts/mailer.html.erb
+  Rendering finance_mailer/high_priced_widget.html.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.html.erb within layouts/mailer (Duration: 1.2ms | Allocations: 296)
+  Rendered layout layouts/mailer.html.erb (Duration: 2.8ms | Allocations: 494)
+  Rendering layout layouts/mailer.text.erb
+  Rendering finance_mailer/high_priced_widget.text.erb within layouts/mailer
+  Rendered finance_mailer/high_priced_widget.text.erb within layouts/mailer (Duration: 1.9ms | Allocations: 223)
+  Rendered layout layouts/mailer.text.erb (Duration: 4.0ms | Allocations: 403)
+FinanceMailer#high_priced_widget: processed outbound mail in 17.5ms
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 1)
+Completed 200 OK in 26ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 14397)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2880957698232373935)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateApiKeys (20210102000000)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "api_keys" ("id" bigserial primary key, "key" text NOT NULL, "client_name" text NOT NULL, "created_at" timestamptz NOT NULL, "deactivated_at" timestamptz)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMENT ON TABLE "api_keys" IS 'Holds all API keys for access to the API'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMENT ON COLUMN "api_keys"."key" IS 'The actual key clients should use'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMENT ON COLUMN "api_keys"."client_name" IS 'Name of the client who was assigned this key'[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMENT ON COLUMN "api_keys"."created_at" IS 'When this key was created'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMENT ON COLUMN "api_keys"."deactivated_at" IS 'When the key was deactivated. When present, this key is not valid.'[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_api_keys_on_key" ON "api_keys" ("key")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMENT ON INDEX "index_api_keys_on_key" IS 'API keys have to be unique or we don''t know who is accessing us'[0m
+  [1m[35m (2.7ms)[0m  [1m[35m
+        CREATE UNIQUE INDEX
+          api_clients_have_only_one_active_key
+        ON
+          api_keys(client_name)
+        WHERE
+          (deactivated_at IS NULL)
+      [0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210102000000"]]
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_advisory_unlock(2880957698232373935)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
